@@ -17,14 +17,24 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {useNewUrlParser: true});
 
 // API Routes
-
+// find all route
 app.get("/api/workout", (req, res) => {
-    db.workout.find({})
-    .then((err, data) => {
+    db.workout.find({}, (err, data) => {
         if (err) {
             res.send(err);
         } else {
             res.send(data);
+        }
+    });
+});
+
+// create route
+app.get("/api/workout", (req, res) => {
+    db.workout.create(req.body, (err, data) => {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(data)
         }
     });
 });
