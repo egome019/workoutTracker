@@ -14,5 +14,22 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {useNewUrlParser: true});
 
+// API Routes
+
+app.get("/api/workout", (req, res) => {
+    db.workout.find({})
+    .then((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(data);
+        }
+    });
+});
+
+
+app.listen(PORT, () => {
+    console.log(`Application is running on port: ${PORT}.`)
+})
