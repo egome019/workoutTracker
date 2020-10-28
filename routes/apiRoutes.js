@@ -23,3 +23,5 @@ router.post("/api/workout", (req, res) => {
         res.status(400).json(err);
     });
 });
+
+module.exports = router;
