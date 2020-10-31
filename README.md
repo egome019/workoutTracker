@@ -49,6 +49,8 @@
   ## Demonstration
   
   [Click here](https://secure-hamlet-15255.herokuapp.com/) to be directed to the application.
-  ![]()
+  ![](assets/workoutTrackerHome.png)
+  
+  ![](assets/workoutTrackerStats.png)
 
   
